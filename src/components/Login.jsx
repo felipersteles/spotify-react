@@ -31,7 +31,7 @@ export default function Login() {
 
       <Crediitos>Desenvolvido por Felipe Teles. Duração de 1h devido a limitações do uso da API</Crediitos>
       
-      <button onClick={handleClick}>Connect Spotify</button>
+      <button onClick={handleClick}>Conectar com Spotify</button>
     </Container>
   );
 }
