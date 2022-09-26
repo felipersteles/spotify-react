@@ -13,7 +13,7 @@ export default function Sidebar() {
             src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
             alt="spotify"
           />
-          <Credits><i>by Felipe Teles ;)</i></Credits>
+          <Credits><a href="https://felipsteles.herokuapp.com/" target="_blank"><i>by Felipe Teles ;)</i></a></Credits>
         </div>
 
         <ul>
@@ -81,4 +81,13 @@ const Container = styled.div`
 
 const Credits = styled.div`
   color: white;
+
+  a{
+    text-decoration: none
+    cursor: pointer;
+  }
+  
+  a:hover {
+    color: #4e0081;
+  }
 `;
