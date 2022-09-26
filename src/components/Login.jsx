@@ -5,7 +5,7 @@ export default function Login() {
   const handleClick = async () => {
     //console.log("login");
     const client_id = "470dc124dff14eb0afd4287cd78f1ec1";
-    const redirect_uri = "http://localhost:3000/";
+    const redirect_uri = "https://spotify-felipsteles.herokuapp.com/";
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-private",
