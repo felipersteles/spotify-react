@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const hash = window.location.hash;
 
-    console.log('hash: ' + hash)
+    //console.log('hash: ' + hash)
     if (hash) {
       const token = hash.substring(1).split("&")[0].split("=")[1];
       //console.log(token);
