@@ -31,7 +31,7 @@ export default function Body({ headerBackground }) {
         tracks: response.data.tracks.items.map(({ track }) => ({
           id: track.id,
           name: track.name,
-          artists: track.artists.map((artist) => artist.name),
+          artists: track.artists.map((artist) => artist.name + "  "),
           image: track.album.images[2].url,
           duration: track.duration_ms,
           album: track.album.name,
@@ -45,6 +45,48 @@ export default function Body({ headerBackground }) {
 
     getInitialPlaylist();
   }, [token, dispatch, selectedPlaylistId]);
+
+  const playTrack = async (
+    id,
+    name,
+    artists,
+    image,
+    context_uri,
+    track_number
+  ) => {
+    //https://developer.spotify.com/documentation/web-api/reference/#/operations/start-a-users-playback
+    const response = await axios.put(
+      `https://api.spotify.com/v1/me/player/play`,
+      {
+        context_uri,
+        offset: {
+          position: track_number - 1,
+        },
+        position_ms: 0,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    if (response.status === 204) {
+      const currentPlaying = {
+        id,
+        name,
+        artists,
+        image,
+      };
+
+      dispatch({ type: reducerCases.SET_PLAYING, currentPlaying });
+      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+    } else {
+      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+    }
+
+    
+  };
 
   //converter tempo de duração
   const msToMinutesAndSeconds = (ms) => {
@@ -105,7 +147,7 @@ export default function Body({ headerBackground }) {
                   index
                 ) => {
                   return (
-                    <div className="row" key={id}>
+                    <div className="row" key={id} onClick={() => playTrack(id, name, artists, image, context_uri, track_number)}>
                       <div className="col">
                         <span>{index + 1}</span>
                       </div>
@@ -201,17 +243,21 @@ const Container = styled.div`
         display: flex;
         align-items: center;
         color: #dddcdc;
+        cursor: pointer;
 
         img {
+          cursor: pointer;
           height: 40px;
           width: 40px;
         }
       }
-      
+
       .detail {
         display: flex;
         gap: 1rem;
+        cursor: pointer;
         .info {
+          cursor: pointer;
           display: flex;
           flex-direction: column;
         }

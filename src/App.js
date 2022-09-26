@@ -5,7 +5,6 @@ import { useStateProvider } from "./utils/StateProvider";
 
 function App() {
   const [{ token }, dispatch] = useStateProvider();
-  let acesso = false;
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -23,7 +22,7 @@ function App() {
     <div>
       {
         //se a token for vazia vai para o login
-        acesso ? <Spotify /> : <Login />
+        token ? <Spotify /> : <Login />
       }
     </div>
   );

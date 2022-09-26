@@ -29,7 +29,7 @@ export default function Login() {
         alt="Spotify"
       ></img>
 
-      <Crediitos>Desenvolvido por Felipe Teles. Duração de 1h devido a limitações da API</Crediitos>
+      <Crediitos>Desenvolvido por Felipe Teles. Duração de 1h devido a limitações do uso da API</Crediitos>
       
       <button onClick={handleClick}>Connect Spotify</button>
     </Container>
