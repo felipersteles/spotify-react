@@ -1,1 +1,1 @@
-# Spotify devoloped by Felipe Teles
+# Spotify developed by Felipe Teles
