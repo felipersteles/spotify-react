@@ -5,7 +5,7 @@ export default function Login() {
   const handleClick = async () => {
     //console.log("login");
     const client_id = "470dc124dff14eb0afd4287cd78f1ec1";
-    const redirect_uri = "https://spotify-felipsteles.herokuapp.com/";
+    const redirect_uri = "http://localhost:3000/";
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-private",
@@ -18,8 +18,8 @@ export default function Login() {
     ];
 
     window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
-        " "
-      )}&response_type=token&show_dialog=true`;
+      " "
+    )}&response_type=token&show_dialog=true`;
   };
 
   return (
@@ -29,8 +29,11 @@ export default function Login() {
         alt="Spotify"
       ></img>
 
-      <Crediitos>Desenvolvido por Felipe Teles. Duração de 1h devido a limitações do uso da API</Crediitos>
-      
+      <Crediitos>
+        Desenvolvido por Felipe Teles. Duração de 1h devido a limitações do uso
+        da API
+      </Crediitos>
+
       <button onClick={handleClick}>Conectar com Spotify</button>
     </Container>
   );

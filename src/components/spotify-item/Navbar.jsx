@@ -16,7 +16,7 @@ export default function Navbar({ navBackground }) {
       </div>
 
       <div className="avatar">
-        <a href={userInfo?.userUrl} target="_blank">
+        <a href={userInfo?.userUrl} target="_blank" rel="noreferrer">
           <CgProfile />
           <span>{userInfo?.name}</span>
         </a>

@@ -13,7 +13,15 @@ export default function Sidebar() {
             src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
             alt="spotify"
           />
-          <Credits><a href="https://felipsteles.herokuapp.com/" target="_blank"><i>by Felipe Teles ;)</i></a></Credits>
+          <Credits>
+            <a
+              href="https://github.com/felipersteles"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i>by Felipe Teles ;)</i>
+            </a>
+          </Credits>
         </div>
 
         <ul>
