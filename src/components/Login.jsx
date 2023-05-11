@@ -1,11 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
 export default function Login() {
   const handleClick = async () => {
     //console.log("login");
     const client_id = "470dc124dff14eb0afd4287cd78f1ec1";
-    const redirect_uri = "https://main--spotify-felipersteles.netlify.app/";
+    const redirect_uri = "https://spotify-felipersteles.netlify.app/";
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-private",
