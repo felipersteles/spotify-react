@@ -1,8 +1,7 @@
 import axios from "axios";
 import styled from "styled-components";
 import React, { useEffect } from "react";
-import { reducerCases } from "../../utils/Constants";
-import { useStateProvider } from "../../utils/StateProvider";
+import { useStateProvider, reducerCases } from "../../utils";
 
 export default function Playlists() {
   const [{ token, playlists }, dispatch] = useStateProvider();
@@ -10,7 +9,8 @@ export default function Playlists() {
   useEffect(() => {
     const getPlaylistData = async () => {
       const response = await axios.get(
-        //ler documentação do spotfy dev no link: https://developer.spotify.com/documentation/web-api/reference/#/operations/get-a-list-of-current-users-playlists
+        // fazendo um get
+        // ler documentação do spotfy dev no link: https://developer.spotify.com/documentation/web-api/reference/#/operations/get-a-list-of-current-users-playlists
         "https://api.spotify.com/v1/me/playlists",
         {
           headers: {

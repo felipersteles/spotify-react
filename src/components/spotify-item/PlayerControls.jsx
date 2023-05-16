@@ -7,9 +7,8 @@ import {
 } from "react-icons/bs";
 import { CgPlayTrackNext, CgPlayTrackPrev } from "react-icons/cg";
 import { FiRepeat } from "react-icons/fi";
-import { useStateProvider } from "../../utils/StateProvider";
+import { useStateProvider, reducerCases } from "../../utils";
 import axios from "axios";
-import { reducerCases } from "../../utils/Constants";
 
 //Recomendado ler a documentação do Player
 export default function PlayerControls() {
@@ -90,7 +89,7 @@ export default function PlayerControls() {
       </div>
 
       <div className="next">
-        <CgPlayTrackNext onClick={() => changeTrack("next")}/>
+        <CgPlayTrackNext onClick={() => changeTrack("next")} />
       </div>
 
       <div className="repeat">

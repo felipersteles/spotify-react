@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { useStateProvider } from "../../utils/StateProvider";
+import { useStateProvider, reducerCases } from "../../utils";
 import styled from "styled-components";
 import { AiFillClockCircle } from "react-icons/ai";
-import { reducerCases } from "../../utils/Constants";
 
 export default function Body({ headerBackground }) {
   const [{ token, selectedPlaylist, selectedPlaylistId }, dispatch] =
@@ -84,8 +83,6 @@ export default function Body({ headerBackground }) {
     } else {
       dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
     }
-
-    
   };
 
   //converter tempo de duração
@@ -147,7 +144,20 @@ export default function Body({ headerBackground }) {
                   index
                 ) => {
                   return (
-                    <div className="row" key={id} onClick={() => playTrack(id, name, artists, image, context_uri, track_number)}>
+                    <div
+                      className="row"
+                      key={id}
+                      onClick={() =>
+                        playTrack(
+                          id,
+                          name,
+                          artists,
+                          image,
+                          context_uri,
+                          track_number
+                        )
+                      }
+                    >
                       <div className="col">
                         <span>{index + 1}</span>
                       </div>

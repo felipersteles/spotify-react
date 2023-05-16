@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { useStateProvider } from "../../utils/StateProvider";
-import { reducerCases } from "../../utils/Constants";
+import { useStateProvider, reducerCases } from "../../utils";
 
 export default function CurrentTrack() {
   const [{ token, currentPlaying }, dispatch] = useStateProvider();
@@ -70,7 +69,7 @@ const Container = styled.div`
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
-      
+
       &__track__name {
         color: white;
         margin-bottom: 0;
@@ -78,7 +77,7 @@ const Container = styled.div`
 
       &__track__artists {
         color: #b3b3b3;
-        margin-top: .35rem;
+        margin-top: 0.35rem;
       }
     }
   }

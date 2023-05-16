@@ -16,6 +16,7 @@ export default function Login() {
       "user-top-read",
     ];
 
+    // fazendo a autenticação com a API do spotify
     window.location.href = `${api_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scope.join(
       " "
     )}&response_type=token&show_dialog=true`;

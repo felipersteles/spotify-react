@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { reducerCases } from "../utils/Constants";
-import { useStateProvider } from "../utils/StateProvider";
+import { reducerCases, useStateProvider } from "../utils";
 import { Body, Navbar, Sidebar, Footer } from "./spotify-item";
 
 export default function Spotify() {
@@ -37,6 +36,8 @@ export default function Spotify() {
         userUrl: data.external_urls.spotify,
         name: data.display_name,
       };
+
+      // joga pro reducer fazer a autenticacao
       dispatch({ type: reducerCases.SET_USER, userInfo });
     };
     getUserInfo();
