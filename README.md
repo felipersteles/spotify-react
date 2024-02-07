@@ -1,43 +1,64 @@
-# Spotify developed by Felipe Teles
+# Spotify in Reactjs with redux
 
-## Como rodar
+This captivating React app, fueled by the Spotify API and managed with Redux for streamlined state management, offers a seamless and powerful musical experience.
+
+## Explore with Ease:
+
+- Boundless Library: Uncover a vast ocean of music - artists, albums, genres, playlists - and embark on sonic adventures with personalized recommendations.
+- Intuitive Search: Find specific tracks or let Spottify guide you to new favorites. Effortlessly explore and discover your next musical obsession.
+
+## Craft Your Soundtrack:
+
+- Playlist Maestro: Create playlists that perfectly capture your mood and curate them meticulously. Access them with ease whenever the urge for specific tunes strikes.
+- Seamless Playback: Take control with intuitive controls. Play, pause, skip, seek, and shuffle with ease, ensuring uninterrupted musical bliss.
+
+# Enhanced by Technology:
+
+- React's Power: Enjoy a smooth and responsive user interface specifically designed for intuitive interactions and effortless discoverability.
+- Redux's Efficiency: Leverage Redux's robust state management for scalable and predictable application behavior.
+- Spotify API's Wealth: Tap into a boundless collection of music, encompassing diverse genres, artists, and eras.
+- Personalized Touch: Let Spottify's intelligent algorithms suggest new musical havens based on your listening preferences.
+
+## How to run
 
 ```bash
-# instale as dependencias
-# lembrando que este comanndo
-# só é necessário
-# na primeira vez
+# clone the repo
+$ git clone https://github.com/felipersteles/spotify-react.git
+
+
+# install dependecies
 $ npm i
 
-# tendo a pasta node_modules
-# basta iniciar o projeto
+# start the server
 $ npm start
 
 ```
 
 ## Context
 
-Criando uma variavel de contexto utilizando o [React.useContext()](https://react.dev/reference/react/useContext):
+### Creating a Store and Provider: 
+This holds the central state of your application. You define the initial state and functions to update it (reducers). The provider component from react-redux to make the store accessible to your React components.
+
+> The initial state of store
+> ![image2](./assets/initial-state.png)
+
+
+Creating the provider using [React.useContext()](https://react.dev/reference/react/useContext):
 
 - `const StateContext = createContext();`
-
-E partir dela fazemos o componente que sera utilizado para armazenas a informação da navegação do usuário:
 
 ![image3](./assets/state-provider.png)
 
 ## Reducer
 
-> Primeiro eu os dividi em casos baseado na aplicação:
+> Spliting the use cases of the application
 > ![image1](./assets/reducer-cases.png)
 
-> Em seguida foi definido um Initial State
-> ![image2](./assets/initial-state.png)
 
-> E por fim utilizo um switch para fazer a variação de estados
+> And using switch to choose the method and change the store
 > ![image3](./assets/reducer.png)
 
-## Creditos
+## Credits
 
-- Baseado neste [video](https://youtu.be/ajVcLGEw8Xw).
-- Escrevendo isso ao som [dessa](https://open.spotify.com/playlist/3DkbPPWe40MpNGRi9uSPTs?si=4bab7e63c917465b).
-- Link do meu [linkedin](https://www.linkedin.com/in/felipsteles/).
+- [video](https://youtu.be/ajVcLGEw8Xw).
+- [listened playlist while coding](https://open.spotify.com/playlist/1mj1ooCvIKIW9fTjSKqmma?si=77f18e42382447ae).
